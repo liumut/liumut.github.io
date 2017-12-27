@@ -57,16 +57,24 @@
 	.rolling .fa {
 		position: absolute;
 		right: 20px;
-		top: 7px;
+		top: 11px;
 		font-size: 24px;
 		color: #1077cc;
 	}
 	.rolling .swiper-container {
 		height: 48px;
+		padding-right: 25px;
 	}
 	.rolling .rolling-li {
 		height: 48px;
 		line-height: 48px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.img {
+		display: block;
+		width: 100%;
 	}
 </style>
 	<style type="text/css">
@@ -75,6 +83,12 @@
 				position: absolute;
 				top:0;
 				left:100%;
+			}
+			.pc_show {
+				display: block;
+			}
+			.mobile_show {
+				display: none;
 			}
 		}
 		@media (max-width: 768px) {
@@ -85,6 +99,12 @@
 			}
 			.met-nav .navlist>li>.dropdown-menu .dropdown-menu {
 				padding-left: 15px;
+			}
+			.pc_show {
+				display: none;
+			}
+			.mobile_show {
+				display: block;
 			}
 		}
 	</style>
@@ -101,7 +121,10 @@
 				<span class="hamburger-bar"></span>
 			</button>
 			<a href="https://show.metinfo.cn/muban/res023/357/" class="navbar-brand navbar-logo vertical-align">
-				<div class="vertical-align-middle"><img src="./img/img1.jpg" ></div>
+				<div class="vertical-align-middle">
+					<img class="pc_show" src="./img/img1.jpg" >
+					<img class="mobile_show" src="./img/img1.png">
+				</div>
 			</a>
 			<h2 class="hide"></h2>
 		</div>
@@ -215,12 +238,14 @@
 				</span>
 			</div>
 			<div>
-				<img class="img" src="img/img3.jpg" alt="">
+				<img class="img pc_show" src="img/img3.jpg" alt="">
+				<img class="img mobile_show" src="img/img5.jpg" alt="">
 			</div>
 		</div>
 	</section>
 	<footer>
-		<img class="img" src="img/img4.jpg" alt="">
+		<img class="img pc_show" src="img/img4.jpg" alt="">
+		<img class="img mobile_show" src="img/img6.jpg" alt="">
 	</footer>
 </nav>
 <script src="jquery/jquery.min.js"></script>
@@ -229,15 +254,22 @@
 <script>
 	$(function(){
 	    var $W = $(window).width();
-	    $(".met-nav li").hover(function(){
-            if($W > 768) {
+        if($W > 768) {
+            $(".met-nav .navlist > li").hover(function(){
                 $(this).addClass("open");
-			}
-	    },function(){
-            if($W > 768) {
+            },function(){
                 $(this).removeClass("open");
-            }
-	    });
+            });
+		}
+        $(".dropdown-menu > li").click(function(){
+            return false;
+        });
+        $(".dropdown-menu > li").hover(function(){
+            $(this).addClass("open");
+        },function(){
+            $(this).removeClass("open");
+		});
+
         var mySwiper = new Swiper('.swiper-container', {
             autoplay: 3000,//可选选项，自动滑动
 			speed: 1000,
