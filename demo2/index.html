@@ -51,6 +51,25 @@
             height: 48px;
             line-height: 48px;
         }
+        .dropdown-menu>.dropdown-submenu.dropdown-menu-right .dropdown-menu {
+            left: 100%!important;
+        }
+        @media (min-width: 768px) {
+            .pc_show {
+                display: block;
+            }
+            .mobile_show {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .pc_show {
+                display: none;
+            }
+            .mobile_show {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body class="met-navfixed">
@@ -78,7 +97,8 @@
                     </div>
                 </div>
                 <a href="https://show.metinfo.cn/muban/res019/365/" class="navbar-brand navbar-logo vertical-align">
-                    <div class="vertical-align-middle"><img src="./img/img1.png"></div>
+                    <h1 class="hide">深蓝人工智能研究院</h1>
+                    <div class="vertical-align-middle"><img src="./img/img1.png" alt="深蓝人工智能研究院"></div>
                 </a>
                 <h2 class="hide"></h2>
             </div>
@@ -109,7 +129,7 @@
                     <li class="dropdown margin-left-0">
                         <a class="dropdown-toggle link " data-toggle="dropdown" data-hover="dropdown" href="" aria-expanded="false" title="业务介绍">业务介绍<span class="fa fa-angle-down"></span></a>
                         <ul class="dropdown-menu dropdown-menu-right animation-slide-top10 maxNavlist" style="">
-                            <li class="dropdown-submenu dropdown-menu-left">
+                            <li class="dropdown-submenu dropdown-menu-right">
                                 <a href="" class=" nav2list">测试评估<span class="fa fa-angle-right"></span></a>
                                 <ul class="dropdown-menu animate maxNavlist3">
                                     <li><a href="" class=" nav3list">网络设备安全测试</a></li>
@@ -122,7 +142,7 @@
                                     <li><a href="" class=" nav3list">信息安全产品分级评估</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown-submenu dropdown-menu-left">
+                            <li class="dropdown-submenu dropdown-menu-right">
                                 <a href="" class=" nav2list">网安实验<span class="fa fa-angle-right"></span></a>
                                 <ul class="dropdown-menu animate maxNavlist3">
                                     <li><a href="" class=" nav3list">攻防演练实验</a></li>
@@ -133,7 +153,7 @@
                                     <li><a href="" class=" nav3list">攻防竞赛</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown-submenu dropdown-menu-left">
+                            <li class="dropdown-submenu dropdown-menu-right">
                                 <a href="" class=" nav2list">培训认证<span class="fa fa-angle-right"></span></a>
                                 <ul class="dropdown-menu animate maxNavlist3">
                                     <li><a href="" class=" nav3list">攻防培训业务</a></li>
@@ -144,7 +164,7 @@
                                     <li><a href="" class=" nav3list">正则表达式匹配评测</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown-submenu dropdown-menu-left">
+                            <li class="dropdown-submenu dropdown-menu-right">
                                 <a href="" class=" nav2list">金融安全<span class="fa fa-angle-right"></span></a>
                                 <ul class="dropdown-menu animate maxNavlist3">
                                     <li><a href="" class=" nav3list">数据披露</a></li>
@@ -214,10 +234,12 @@
         </div>
     </div>
     <div class="container">
-        <img class="img" src="img/img3.jpg" alt="">
+        <img class="img pc_show" src="img/img3.jpg" alt="">
+        <img class="img mobile_show" src="img/img5.jpg" alt="">
     </div>
     <div>
-        <img class="img" src="img/img4.jpg" alt="">
+        <img class="img pc_show" src="img/img4.jpg" alt="">
+        <img class="img mobile_show" src="img/img6.jpg" alt="">
     </div>
     <script src="swiper/dist/js/swiper.min.js"></script>
     <script src="./index.js"></script>

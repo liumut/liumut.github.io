@@ -26,6 +26,22 @@
             display: block;
             width: 100%;
         }
+        @media (min-width: 768px) {
+            .pc_show {
+                display: block;
+            }
+            .mobile_show {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .pc_show {
+                display: none;
+            }
+            .mobile_show {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body class="met-navfixed">
@@ -279,7 +295,8 @@
 </div>
 </div>
 <div>
-    <img src="assets/img/img1.jpg" alt="" class="img">
+    <img src="assets/img/img1.jpg" alt="" class="img pc_show">
+    <img src="assets/img/img2.jpg" alt="" class="img mobile_show">
 </div>
 <script src="./assets/index.js"></script>
 
